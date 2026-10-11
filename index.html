@@ -1,0 +1,3925 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>JUMANJI PRO — Gistologiya</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+:root{
+    --gold:#e9c45b;
+    --gold2:#ffe89a;
+    --green:#173b24;
+    --green2:#2b6339;
+    --dark:#030805;
+    --paper:#e9d7a4;
+    --red:#a52e27;
+    --blue:#2777bd;
+    --shadow:0 12px 40px rgba(0,0,0,.65);
+}
+
+html,body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+body{
+    background:
+        radial-gradient(circle at 50% 40%,#244a2d,#07150b 65%,#010302);
+    color:white;
+    font-family:Georgia,"Times New Roman",serif;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header{
+    height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 22px;
+    background:
+        linear-gradient(180deg,#030604,#0a170d);
+    border-bottom:1px solid #8e7734;
+    box-shadow:0 5px 25px #000;
+    position:relative;
+    z-index:50;
+}
+
+.logoBox{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border:2px solid var(--gold);
+    background:
+        radial-gradient(circle,#53824a,#17351e 60%,#020604);
+    box-shadow:0 0 20px #d8af4238;
+    overflow:hidden;
+}
+
+.logo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.brand h1{
+    font-size:20px;
+    letter-spacing:3px;
+    color:var(--gold2);
+    text-shadow:0 3px 8px #000;
+}
+
+.brand small{
+    color:#9aa995;
+    letter-spacing:3px;
+    font-size:9px;
+}
+
+.headerButtons{
+    display:flex;
+    gap:7px;
+}
+
+.btn{
+    padding:9px 13px;
+    border-radius:8px;
+    border:1px solid #506d51;
+    color:#fff;
+    background:linear-gradient(#315c3b,#122819);
+    cursor:pointer;
+    font-family:inherit;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+    border-color:var(--gold);
+    color:var(--gold2);
+}
+
+.goldBtn{
+    color:#241a00;
+    background:linear-gradient(#ffe898,#c48e1d);
+    border-color:#ffe18a;
+}
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.main{
+    height:calc(100vh - 72px);
+    display:grid;
+    grid-template-columns:250px minmax(500px,1fr) 250px;
+    gap:12px;
+    padding:12px;
+}
+
+/* =====================================================
+   TEAM
+===================================================== */
+
+.team{
+    border-radius:18px;
+    border:1px solid #536b4e;
+    background:
+        linear-gradient(145deg,rgba(35,67,42,.97),rgba(3,15,8,.98));
+    box-shadow:var(--shadow);
+    padding:14px;
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+.team.active{
+    border:2px solid var(--gold);
+    box-shadow:
+        0 0 35px #e9c45b32,
+        inset 0 0 30px #e9c45b0b;
+}
+
+.team.active:after{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:16px;
+    pointer-events:none;
+    box-shadow:inset 0 0 25px #e9c45b16;
+    animation:activeGlow 1.5s infinite alternate;
+}
+
+@keyframes activeGlow{
+    from{opacity:.3}
+    to{opacity:1}
+}
+
+.teamHeader{
+    text-align:center;
+    color:var(--gold2);
+    font-size:16px;
+    letter-spacing:2px;
+}
+
+.teamAvatar{
+    width:64px;
+    height:64px;
+    border-radius:50%;
+    margin:8px auto 4px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:32px;
+    border:2px solid var(--gold);
+    background:
+        radial-gradient(circle at 30% 25%,#709d56,#234b2d 65%,#071009);
+    box-shadow:0 0 25px #000;
+}
+
+.teamName{
+    text-align:center;
+    font-size:18px;
+    color:white;
+    font-weight:bold;
+}
+
+.currentMemberBox{
+    background:#020705aa;
+    border:1px solid #e9c45b44;
+    border-radius:8px;
+    padding:6px;
+    text-align:center;
+    margin-top:6px;
+}
+
+.currentMemberBox small{
+    font-size:10px;
+    color:#aabfa8;
+    display:block;
+}
+
+.currentMemberBox span{
+    font-size:13px;
+    color:var(--gold2);
+    font-weight:bold;
+}
+
+.teamState{
+    text-align:center;
+    color:#91a391;
+    font-size:11px;
+    margin-top:2px;
+}
+
+.stats{
+    margin-top:8px;
+    background:#02080566;
+    border:1px solid #ffffff0c;
+    border-radius:10px;
+    padding:8px;
+}
+
+.stat{
+    display:flex;
+    justify-content:space-between;
+    padding:4px 0;
+    color:#9cad9c;
+    font-size:12px;
+}
+
+.stat strong{
+    color:white;
+}
+
+.penaltyBtn{
+    width:100%;
+    margin-top:8px;
+    padding:7px;
+    border-radius:6px;
+    border:1px solid #8e3830;
+    background:linear-gradient(#8a2924,#561e1a);
+    color:white;
+    font-size:11px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.penaltyBtn:hover{
+    background:linear-gradient(#a52e27,#761e1b);
+    border-color:#ff766b;
+}
+
+.distance{
+    text-align:center;
+    color:var(--gold2);
+    font-size:20px;
+    margin-top:6px;
+}
+
+.turn{
+    margin-top:8px;
+    padding:6px;
+    text-align:center;
+    color:#69786b;
+    background:#020705;
+    border-radius:7px;
+    font-size:10px;
+    letter-spacing:2px;
+}
+
+.active .turn{
+    color:white;
+    background:linear-gradient(90deg,#684c0b,#c18c1b,#684c0b);
+    animation:turnPulse 1s infinite alternate;
+}
+
+@keyframes turnPulse{
+    from{box-shadow:0 0 4px #e9c45b}
+    to{box-shadow:0 0 18px #e9c45b}
+}
+
+/* =====================================================
+   MAP
+===================================================== */
+
+.mapContainer{
+    min-width:0;
+    min-height:0;
+    position:relative;
+    border-radius:22px;
+    overflow:hidden;
+    border:2px solid #806d35;
+    box-shadow:0 0 45px #000;
+}
+
+.map{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+    background:
+        radial-gradient(ellipse at 20% 30%,#416b39 0%,transparent 23%),
+        radial-gradient(ellipse at 82% 23%,#365e32 0%,transparent 25%),
+        radial-gradient(ellipse at 65% 78%,#4b6b35 0%,transparent 23%),
+        radial-gradient(ellipse at 15% 80%,#274f2b 0%,transparent 30%),
+        linear-gradient(135deg,#173b22,#092215 50%,#173a20);
+}
+
+.map:before{
+    content:"";
+    position:absolute;
+    inset:0;
+    opacity:.25;
+    background-image:
+        radial-gradient(circle,#9aa05e 1px,transparent 1.5px),
+        radial-gradient(circle,#111 1px,transparent 1.5px);
+    background-size:22px 25px,31px 36px;
+}
+
+.leaf{
+    position:absolute;
+    font-size:32px;
+    opacity:.7;
+    filter:drop-shadow(0 5px 4px #000);
+    z-index:1;
+}
+
+.l1{left:2%;top:8%}
+.l2{right:2%;top:8%}
+.l3{left:4%;bottom:9%}
+.l4{right:4%;bottom:8%}
+.l5{left:44%;top:9%}
+.l6{right:28%;bottom:6%}
+
+.river{
+    position:absolute;
+    width:130%;
+    height:105px;
+    left:-15%;
+    top:44%;
+    transform:rotate(-12deg);
+    background:
+        repeating-linear-gradient(
+            0deg,
+            #174c63 0 7px,
+            #236c83 8px 13px,
+            #184d65 14px 22px
+        );
+    border-top:3px solid #5b9daf;
+    border-bottom:3px solid #092b3b;
+    opacity:.82;
+    z-index:0;
+    box-shadow:0 0 25px #0006;
+}
+
+.bridge{
+    position:absolute;
+    width:180px;
+    height:38px;
+    left:43%;
+    top:46%;
+    transform:rotate(-12deg);
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #684624 0 15px,
+            #a1743e 16px 28px
+        );
+    border:4px solid #3b2614;
+    z-index:3;
+    box-shadow:0 8px 10px #000;
+}
+
+.mapTitle{
+    position:absolute;
+    top:12px;
+    left:50%;
+    transform:translateX(-50%);
+    text-align:center;
+    z-index:20;
+    pointer-events:none;
+}
+
+.mapTitle h2{
+    color:var(--gold2);
+    font-size:34px;
+    letter-spacing:8px;
+    text-shadow:0 4px 10px #000;
+}
+
+.mapTitle span{
+    font-size:9px;
+    color:#c1c5a7;
+    letter-spacing:5px;
+}
+
+/* =====================================================
+   PATH
+===================================================== */
+
+.pathLine{
+    position:absolute;
+    height:15px;
+    border-radius:20px;
+    background:
+        linear-gradient(#8c6a39,#52391d);
+    box-shadow:0 3px 8px #000;
+    transform-origin:left center;
+    z-index:2;
+}
+
+.cell{
+    width:53px;
+    height:53px;
+    position:absolute;
+    transform:translate(-50%,-50%);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:14px;
+    border:3px solid #4b3519;
+    color:#21190c;
+    font-weight:bold;
+    font-size:15px;
+    background:
+        linear-gradient(145deg,#d9c48a,#806c3b);
+    box-shadow:
+        inset 0 0 9px #fff5,
+        0 5px 10px #000;
+    z-index:5;
+    transition:.2s;
+}
+
+.cell:hover{
+    transform:translate(-50%,-50%) scale(1.08);
+}
+
+.cell.easyEvent{
+    background:linear-gradient(145deg,#e5ce68,#a77a19);
+}
+
+.cell.penalty{
+    background:linear-gradient(145deg,#d95a4d,#761e1b);
+    color:white;
+}
+
+.cell.teleport{
+    background:linear-gradient(145deg,#9d66e4,#4c2678);
+    color:white;
+}
+
+.cell.finish{
+    width:68px;
+    height:68px;
+    border-radius:50%;
+    background:
+        radial-gradient(circle,#fff1a2,#d49a20 60%,#70470d);
+    font-size:26px;
+    border-color:#ffe995;
+    box-shadow:0 0 25px #e9c45b;
+}
+
+/* =====================================================
+   TOKENS
+===================================================== */
+
+.token{
+    width:47px;
+    height:47px;
+    border-radius:50%;
+    position:absolute;
+    transform:translate(-50%,-50%);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:27px;
+    border:3px solid #fff1a2;
+    z-index:12;
+    box-shadow:0 6px 14px #000,0 0 14px #fff4;
+    transition:left .45s cubic-bezier(.22,.8,.2,1),
+               top .45s cubic-bezier(.22,.8,.2,1);
+}
+
+.token.one{
+    background:radial-gradient(circle at 30% 20%,#ff6b5d,#841e1d);
+}
+
+.token.two{
+    background:radial-gradient(circle at 30% 20%,#72c5ff,#174f83);
+}
+
+.token.moving{
+    animation:tokenBounce .45s infinite alternate;
+}
+
+@keyframes tokenBounce{
+    from{transform:translate(-50%,-50%) scale(1)}
+    to{transform:translate(-50%,-65%) scale(1.08)}
+}
+
+.tokenLabel{
+    position:absolute;
+    top:44px;
+    background:#000c;
+    padding:2px 5px;
+    border-radius:4px;
+    white-space:nowrap;
+    font-size:9px;
+}
+
+/* =====================================================
+   MAP LEGEND
+===================================================== */
+
+.legend{
+    position:absolute;
+    bottom:10px;
+    left:10px;
+    z-index:20;
+    display:flex;
+    gap:5px;
+    flex-wrap:wrap;
+}
+
+.legend span{
+    padding:5px 7px;
+    border-radius:5px;
+    background:#020807d9;
+    border:1px solid #ffffff22;
+    font-size:9px;
+}
+
+/* =====================================================
+   CENTER START BUTTON
+===================================================== */
+
+.startGame{
+    position:absolute;
+    left:50%;
+    bottom:14px;
+    transform:translateX(-50%);
+    z-index:25;
+    padding:12px 28px;
+    border-radius:10px;
+    border:2px solid var(--gold);
+    background:linear-gradient(#f6d66c,#956916);
+    color:#241800;
+    font-family:inherit;
+    font-weight:bold;
+    letter-spacing:2px;
+    cursor:pointer;
+    box-shadow:0 0 20px #000;
+}
+
+.startGame:hover{
+    transform:translateX(-50%) scale(1.05);
+}
+
+/* =====================================================
+   OVERLAYS
+===================================================== */
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:#000b;
+    backdrop-filter:blur(8px);
+    z-index:100;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:18px;
+}
+
+.overlay.show{
+    display:flex;
+}
+
+.card{
+    width:min(900px,96vw);
+    max-height:94vh;
+    overflow:auto;
+    background:
+        linear-gradient(145deg,#203e28,#06110a);
+    border:2px solid var(--gold);
+    border-radius:20px;
+    padding:27px;
+    box-shadow:0 0 70px #000;
+    position:relative;
+}
+
+.close{
+    position:absolute;
+    right:14px;
+    top:12px;
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    border:1px solid #8e3830;
+    background:#561e1a;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+}
+
+.card h2{
+    color:var(--gold2);
+    margin-bottom:17px;
+}
+
+/* =====================================================
+   TURN SCREEN
+===================================================== */
+
+.turnScreen{
+    text-align:center;
+    width:min(700px,94vw);
+    padding:55px;
+}
+
+.turnScreen .animal{
+    font-size:90px;
+    animation:turnAnimal .8s infinite alternate;
+}
+
+@keyframes turnAnimal{
+    to{transform:scale(1.1) rotate(3deg)}
+}
+
+.turnScreen h1{
+    font-size:43px;
+    color:var(--gold2);
+    margin:12px;
+    letter-spacing:3px;
+}
+
+.turnScreen p{
+    color:#b7c6b7;
+}
+
+/* =====================================================
+   DICE
+===================================================== */
+
+.diceBox{
+    text-align:center;
+    padding:35px;
+}
+
+.dice{
+    width:115px;
+    height:115px;
+    margin:15px auto 25px;
+    border-radius:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:70px;
+    color:#241700;
+    background:
+        linear-gradient(145deg,#fff1ad,#c78f20);
+    border:4px solid #ffe793;
+    box-shadow:0 15px 35px #000;
+}
+
+.dice.rolling{
+    animation:diceRoll .13s infinite;
+}
+
+@keyframes diceRoll{
+    0%{transform:rotate(0) scale(1)}
+    50%{transform:rotate(15deg) scale(1.08)}
+    100%{transform:rotate(-15deg) scale(.95)}
+}
+
+/* =====================================================
+   QUESTION
+===================================================== */
+
+.questionCard{
+    width:min(1000px,97vw);
+}
+
+.levelBadge{
+    display:inline-block;
+    padding:7px 13px;
+    border-radius:7px;
+    font-size:12px;
+    margin-bottom:14px;
+}
+
+.easy{
+    background:#23723d;
+}
+
+.medium{
+    background:#9a761b;
+}
+
+.hard{
+    background:#922b25;
+}
+
+.question{
+    font-size:25px;
+    line-height:1.4;
+    margin-bottom:16px;
+}
+
+.questionImage{
+    width:100%;
+    max-height:250px;
+    object-fit:contain;
+    border-radius:10px;
+    background:#000;
+    margin-bottom:15px;
+    display:none;
+}
+
+.answers{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.answer{
+    padding:15px;
+    text-align:left;
+    border-radius:10px;
+    border:1px solid #54745a;
+    background:linear-gradient(145deg,#2b5335,#102318);
+    color:white;
+    font-family:inherit;
+    font-size:16px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.answer:hover{
+    border-color:var(--gold);
+    transform:translateY(-2px);
+}
+
+.answer.correct{
+    background:#16723b;
+    border-color:#6dffa3;
+}
+
+.answer.wrong{
+    background:#8a2924;
+    border-color:#ff766b;
+}
+
+.answer:disabled{
+    cursor:default;
+}
+
+.questionBottom{
+    display:flex;
+    justify-content:space-between;
+    margin-top:16px;
+    color:#9cad9d;
+}
+
+.timer{
+    font-size:23px;
+    color:var(--gold2);
+}
+
+/* =====================================================
+   ADMIN
+===================================================== */
+
+.adminGrid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.field{
+    margin-bottom:10px;
+}
+
+.field label{
+    display:block;
+    font-size:12px;
+    color:#aebcae;
+    margin-bottom:5px;
+}
+
+input,select,textarea{
+    width:100%;
+    border:1px solid #46664d;
+    border-radius:8px;
+    background:#07110a;
+    color:white;
+    padding:11px;
+    font-family:inherit;
+    outline:none;
+}
+
+textarea{
+    min-height:90px;
+    resize:vertical;
+}
+
+.full{
+    grid-column:1/-1;
+}
+
+.options{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+}
+
+.adminButtons{
+    display:flex;
+    gap:7px;
+    flex-wrap:wrap;
+    margin-top:5px;
+}
+
+.questionBank{
+    margin-top:20px;
+}
+
+.bankHeader{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    color:var(--gold2);
+    margin-bottom:9px;
+}
+
+.filterButtons{
+    display:flex;
+    gap:5px;
+    margin-bottom:10px;
+}
+
+.filterButtons button{
+    padding:7px 10px;
+    border-radius:6px;
+    background:#17351f;
+    color:white;
+    border:1px solid #38553d;
+    cursor:pointer;
+}
+
+.qItem{
+    padding:11px;
+    border:1px solid #324a36;
+    border-radius:9px;
+    margin-bottom:7px;
+    background:#061009;
+}
+
+.qTop{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+}
+
+.qText{
+    margin-top:6px;
+    color:#dbe2d8;
+    font-size:14px;
+}
+
+.qActions{
+    display:flex;
+    gap:5px;
+    margin-top:8px;
+}
+
+.qActions button{
+    border:0;
+    border-radius:5px;
+    padding:6px 9px;
+    background:#274b31;
+    color:white;
+    cursor:pointer;
+}
+
+/* =====================================================
+   WIN
+===================================================== */
+
+.winCard{
+    text-align:center;
+    padding:40px 30px;
+    max-width: 650px;
+}
+
+.trophy{
+    font-size:80px;
+    animation:trophy 1s infinite alternate;
+}
+
+@keyframes trophy{
+    to{
+        transform:scale(1.12) rotate(4deg);
+        filter:drop-shadow(0 0 15px #ffe36c);
+    }
+}
+
+.winCard h1{
+    font-size:36px;
+    color:var(--gold2);
+    margin:10px 0;
+}
+
+.winCard p{
+    color:#b8c7b8;
+    font-size:14px;
+}
+
+.rankingBox{
+    margin-top:15px;
+    background:#030805cc;
+    border:1px solid #e9c45b44;
+    border-radius:12px;
+    padding:14px;
+    text-align:left;
+}
+
+.rankingBox h3{
+    color:var(--gold2);
+    font-size:15px;
+    margin-bottom:8px;
+    border-bottom:1px solid #ffffff22;
+    padding-bottom:4px;
+}
+
+.rankItem{
+    display:flex;
+    justify-content:space-between;
+    padding:5px 0;
+    font-size:13px;
+    border-bottom:1px dashed #ffffff11;
+}
+
+.muscleLore{
+    margin-top:15px;
+    background:linear-gradient(135deg,rgba(165,46,39,0.3),rgba(39,119,189,0.3));
+    border:1px solid var(--gold);
+    border-radius:10px;
+    padding:12px;
+    font-size:13px;
+    color:#ffe89a;
+    line-height:1.4;
+    text-align:left;
+}
+
+/* =====================================================
+   CINEMATIC EVENT
+===================================================== */
+
+.eventCard{
+    text-align:center;
+    padding:45px;
+}
+
+.eventIcon{
+    font-size:80px;
+}
+
+.eventCard h1{
+    color:var(--gold2);
+    margin:10px;
+}
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+.toast{
+    position:fixed;
+    left:50%;
+    bottom:25px;
+    transform:translate(-50%,40px);
+    padding:13px 20px;
+    border:1px solid var(--gold);
+    border-radius:9px;
+    background:#07120aeF;
+    color:white;
+    opacity:0;
+    z-index:300;
+    transition:.3s;
+    pointer-events:none;
+}
+
+.toast.show{
+    opacity:1;
+    transform:translate(-50%,0);
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:1000px){
+
+    html,body{
+        overflow:auto;
+    }
+
+    .main{
+        height:auto;
+        grid-template-columns:1fr;
+    }
+
+    .team{
+        min-height:260px;
+    }
+
+    .mapContainer{
+        height:700px;
+    }
+
+}
+
+@media(max-width:650px){
+
+    .header{
+        height:62px;
+    }
+
+    .brand h1{
+        font-size:14px;
+        letter-spacing:1px;
+    }
+
+    .brand small{
+        display:none;
+    }
+
+    .main{
+        height:auto;
+    }
+
+    .mapContainer{
+        height:600px;
+    }
+
+    .answers,
+    .adminGrid,
+    .options{
+        grid-template-columns:1fr;
+    }
+
+    .question{
+        font-size:19px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="header">
+
+    <div class="logoBox">
+
+        <div class="logo">
+            <img src="https://i.ibb.co/BKFyRfhW/logo.png" alt="Logo" onerror="this.onerror=null; this.src='https://ibb.co/BKFyRfhW';">
+        </div>
+
+        <div class="brand">
+            <h1>ANDIJON DAVLAT TIBBIYOT INSTITUTI</h1>
+            <small>HISTOLOGY BATTLE ARENA</small>
+        </div>
+
+    </div>
+
+    <div class="headerButtons">
+
+        <button class="btn"
+                onclick="openAdmin()">
+            ⚙ ADMIN
+        </button>
+
+        <button class="btn"
+                onclick="fullscreen()">
+            ⛶
+        </button>
+
+        <button class="btn"
+                onclick="resetGame()">
+            ↻
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="main">
+
+<!-- TEAM 1 -->
+
+<section class="team" id="team0">
+
+    <div>
+        <div class="teamHeader">
+            Ⅰ — JAMOA
+        </div>
+
+        <div class="teamAvatar">
+            🦁
+        </div>
+
+        <div class="teamName"
+             id="name0">
+            JUNGLE
+        </div>
+
+        <div class="currentMemberBox">
+            <small>Navbatdagi ishtirokchi:</small>
+            <span id="member0">Ism belgilanmagan</span>
+        </div>
+
+        <div class="teamState"
+             id="state0">
+            Navbat kutilmoqda
+        </div>
+
+        <div class="stats">
+
+            <div class="stat">
+                <span>📍 Katak</span>
+                <strong id="pos0">1</strong>
+            </div>
+
+            <div class="stat">
+                <span>🎯 Savollar</span>
+                <strong id="moves0">0</strong>
+            </div>
+
+            <div class="stat">
+                <span>✅ To‘g‘ri</span>
+                <strong id="correct0">0</strong>
+            </div>
+
+            <div class="stat">
+                <span>❌ Xato</span>
+                <strong id="wrong0">0</strong>
+            </div>
+
+        </div>
+
+        <button class="penaltyBtn" onclick="applyTeamPenalty(0)">
+            ⚠️ Jarima (−1 katak)
+        </button>
+    </div>
+
+    <div>
+        <div class="distance">
+            🧭 <span id="distance0">1</span>
+        </div>
+
+        <div class="turn">
+            NAVBAT
+        </div>
+    </div>
+
+</section>
+
+
+<!-- MAP -->
+
+<section class="mapContainer">
+
+    <div class="map" id="map">
+
+        <div class="river"></div>
+        <div class="bridge"></div>
+
+        <div class="leaf l1">🌴</div>
+        <div class="leaf l2">🌿</div>
+        <div class="leaf l3">🌴</div>
+        <div class="leaf l4">🌿</div>
+        <div class="leaf l5">🌱</div>
+        <div class="leaf l6">🌴</div>
+
+        <div class="mapTitle">
+            <h2>JUMANJI</h2>
+            <span>HISTOLOGY QUEST</span>
+        </div>
+
+        <div id="path"></div>
+
+        <div class="token one"
+             id="token0">
+            🦁
+            <span class="tokenLabel"
+                  id="label0">
+                JUNGLE
+            </span>
+        </div>
+
+        <div class="token two"
+             id="token1">
+            🐺
+            <span class="tokenLabel"
+                  id="label1">
+                WARRIORS
+            </span>
+        </div>
+
+        <div class="legend">
+            <span>🟫 Oddiy</span>
+            <span>🟨 Bonus</span>
+            <span>🟥 Jarima</span>
+            <span>🟪 Teleport</span>
+            <span>🏁 Finish</span>
+        </div>
+
+        <button class="startGame"
+                onclick="startTurn()">
+            ⚔ NAVBATNI BOSHLASH
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- TEAM 2 -->
+
+<section class="team" id="team1">
+
+    <div>
+        <div class="teamHeader">
+            Ⅱ — JAMOA
+        </div>
+
+        <div class="teamAvatar">
+            🐺
+        </div>
+
+        <div class="teamName"
+             id="name1">
+            WARRIORS
+        </div>
+
+        <div class="currentMemberBox">
+            <small>Navbatdagi ishtirokchi:</small>
+            <span id="member1">Ism belgilanmagan</span>
+        </div>
+
+        <div class="teamState"
+             id="state1">
+            Navbat kutilmoqda
+        </div>
+
+        <div class="stats">
+
+            <div class="stat">
+                <span>📍 Katak</span>
+                <strong id="pos1">1</strong>
+            </div>
+
+            <div class="stat">
+                <span>🎯 Savollar</span>
+                <strong id="moves1">0</strong>
+            </div>
+
+            <div class="stat">
+                <span>✅ To‘g‘ri</span>
+                <strong id="correct1">0</strong>
+            </div>
+
+            <div class="stat">
+                <span>❌ Xato</span>
+                <strong id="wrong1">0</strong>
+            </div>
+
+        </div>
+
+        <button class="penaltyBtn" onclick="applyTeamPenalty(1)">
+            ⚠️ Jarima (−1 katak)
+        </button>
+    </div>
+
+    <div>
+        <div class="distance">
+            🧭 <span id="distance1">1</span>
+        </div>
+
+        <div class="turn">
+            NAVBAT
+        </div>
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =====================================================
+     TURN SCREEN
+===================================================== -->
+
+<div class="overlay" id="turnOverlay">
+
+    <div class="card turnScreen">
+
+        <div class="animal"
+             id="turnAnimal">
+            🦁
+        </div>
+
+        <h1 id="turnTitle">
+            JUNGLE
+        </h1>
+
+        <p id="turnMemberText" style="font-size:18px; color:var(--gold2); margin-top:8px; font-weight:bold;">
+        </p>
+        <p style="margin-top:5px;">
+            Sizning navbatingiz!
+        </p>
+
+        <br>
+
+        <button class="btn goldBtn"
+                onclick="closeTurnAndDice()">
+            DAVOM ETISH
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     DICE
+===================================================== -->
+
+<div class="overlay" id="diceOverlay">
+
+    <div class="card diceBox">
+
+        <h2>🎲 JUMANJI ZARI</h2>
+
+        <div class="dice"
+             id="dice">
+            ⚄
+        </div>
+
+        <h3 id="diceResult">
+            Zar tashlanmoqda...
+        </h3>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     DIFFICULTY SELECT MODAL
+===================================================== -->
+
+<div class="overlay" id="difficultyOverlay">
+
+    <div class="card" style="text-align:center; max-width:500px;">
+        <h2>🎯 SAVOL DARAJASINI TANLANG</h2>
+        <p style="color:#b8c7b8; margin-bottom:20px;">Qaysi darajadagi savolga javob bermoqchisiz?</p>
+        
+        <div style="display:flex; flex-direction:column; gap:12px;">
+            <button class="btn" style="background:linear-gradient(#23723d,#12381e); padding:15px; font-size:18px;" onclick="selectDifficulty('easy')">
+                🟢 OSON (+1 katak)
+            </button>
+            <button class="btn" style="background:linear-gradient(#9a761b,#4d3b0d); padding:15px; font-size:18px;" onclick="selectDifficulty('medium')">
+                🟡 O‘RTA (+2 katak)
+            </button>
+            <button class="btn" style="background:linear-gradient(#922b25,#4a1512); padding:15px; font-size:18px;" onclick="selectDifficulty('hard')">
+                🔴 QIYIN (+3 katak)
+            </button>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     QUESTION
+===================================================== -->
+
+<div class="overlay" id="questionOverlay">
+
+    <div class="card questionCard">
+
+        <button class="close"
+                onclick="closeQuestion()">
+            ×
+        </button>
+
+        <h2>
+            🧬 GISTOLOGIYA SINOVI
+        </h2>
+
+        <div id="levelBadge"
+             class="levelBadge easy">
+            OSON
+        </div>
+
+        <img id="questionImage"
+             class="questionImage">
+
+        <div class="question"
+             id="questionText">
+        </div>
+
+        <div class="answers"
+             id="answers">
+        </div>
+
+        <div class="questionBottom">
+
+            <span id="questionTeam">
+            </span>
+
+            <span class="timer">
+                ⏱ <span id="timer">30</span>
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     EVENT
+===================================================== -->
+
+<div class="overlay" id="eventOverlay">
+
+    <div class="card eventCard">
+
+        <div class="eventIcon"
+             id="eventIcon">
+            🎁
+        </div>
+
+        <h1 id="eventTitle">
+            BONUS!
+        </h1>
+
+        <p id="eventText">
+        </p>
+
+        <br>
+
+        <button class="btn goldBtn"
+                onclick="closeEvent()">
+            DAVOM ETISH
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     WIN
+===================================================== -->
+
+<div class="overlay" id="winOverlay">
+
+    <div class="card winCard">
+
+        <div class="trophy">
+            🏆
+        </div>
+
+        <h1 id="winner">
+            G‘OLIB!
+        </h1>
+
+        <p id="winSubtitle">
+            Gistologiya Jumanji jangining g‘olibi!
+        </p>
+
+        <div id="rankingContainer"></div>
+
+        <div id="muscleLoreContainer"></div>
+
+        <br>
+
+        <button class="btn goldBtn"
+                onclick="resetGame()">
+            QAYTA BOSHLASH
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     ADMIN LOGIN
+===================================================== -->
+
+<div class="overlay" id="loginOverlay">
+
+    <div class="card"
+         style="max-width:420px;text-align:center">
+
+        <h2>🔐 ADMIN PANEL</h2>
+
+        <p style="color:#aab9aa;margin-bottom:15px">
+            Admin PIN kodini kiriting
+        </p>
+
+        <input id="adminPin"
+               type="password"
+               placeholder="PIN">
+
+        <br><br>
+
+        <button class="btn goldBtn"
+                onclick="checkAdmin()">
+            KIRISH
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     ADMIN
+===================================================== -->
+
+<div class="overlay" id="adminOverlay">
+
+    <div class="card">
+
+        <button class="close"
+                onclick="closeAdmin()">
+            ×
+        </button>
+
+        <h2>⚙ JUMANJI PRO — ADMIN</h2>
+
+        <div class="adminGrid">
+
+            <div class="field">
+
+                <label>
+                    1-Jamoa nomi
+                </label>
+
+                <input id="teamNameInput0"
+                       value="JUNGLE">
+
+            </div>
+
+            <div class="field full">
+
+                <label>
+                    1-Jamoa a'zolari (har bir ismni vergul bilan ajratib yozing)
+                </label>
+                <textarea id="teamMembersInput0" placeholder="Ali, Valiy, Hasan..."></textarea>
+
+            </div>
+
+            <div class="field">
+
+                <label>
+                    2-Jamoa nomi
+                </label>
+
+                <input id="teamNameInput1"
+                       value="WARRIORS">
+
+            </div>
+
+            <div class="field full">
+
+                <label>
+                    2-Jamoa a'zolari (har bir ismni vergul bilan ajratib yozing)
+                </label>
+                <textarea id="teamMembersInput1" placeholder="Otabek, Fotima, Zuxra..."></textarea>
+
+            </div>
+
+            <div class="field">
+
+                <label>
+                    Savol darajasi
+                </label>
+
+                <select id="qLevel">
+
+                    <option value="easy">
+                        🟢 OSON — +1
+                    </option>
+
+                    <option value="medium">
+                        🟡 O‘RTA — +2
+                    </option>
+
+                    <option value="hard">
+                        🔴 QIYIN — +3
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div class="field">
+
+                <label>
+                    Vaqt (soniya)
+                </label>
+
+                <input id="qTime"
+                       type="number"
+                       value="30"
+                       min="5"
+                       max="180">
+
+            </div>
+
+            <div class="field full">
+
+                <label>
+                    Savol
+                </label>
+
+                <textarea id="qText"
+                    placeholder="Gistologiya savolini yozing..."></textarea>
+
+            </div>
+
+            <div class="field full">
+
+                <label>
+                    Javob variantlari
+                </label>
+
+                <div class="options">
+
+                    <input id="ans0"
+                           placeholder="A variant">
+
+                    <input id="ans1"
+                           placeholder="B variant">
+
+                    <input id="ans2"
+                           placeholder="C variant">
+
+                    <input id="ans3"
+                           placeholder="D variant">
+
+                </div>
+
+            </div>
+
+            <div class="field">
+
+                <label>
+                    To‘g‘ri javob
+                </label>
+
+                <select id="qCorrect">
+
+                    <option value="0">A</option>
+                    <option value="1">B</option>
+                    <option value="2">C</option>
+                    <option value="3">D</option>
+
+                </select>
+
+            </div>
+
+            <div class="field">
+
+                <label>
+                    Rasm
+                </label>
+
+                <input id="qImage"
+                       type="file"
+                       accept="image/*">
+
+            </div>
+
+        </div>
+
+        <div class="adminButtons">
+
+            <button class="btn goldBtn"
+                    onclick="addQuestion()">
+                ➕ SAVOL QO‘SHISH
+            </button>
+
+            <button class="btn"
+                    onclick="saveTeams()">
+                💾 JAMOALARNI SAQLASH
+            </button>
+
+            <button class="btn"
+                    onclick="exportQuestions()">
+                📤 EXPORT
+            </button>
+
+            <button class="btn"
+                    onclick="document.getElementById('importFile').click()">
+                📥 IMPORT
+            </button>
+
+            <input id="importFile"
+                   type="file"
+                   accept=".json"
+                   hidden
+                   onchange="importQuestions(event)">
+
+        </div>
+
+        <div class="questionBank">
+
+            <div class="bankHeader">
+
+                <strong>
+                    📚 SAVOL BANKI
+                </strong>
+
+                <span id="questionCount">
+                    0 ta
+                </span>
+
+            </div>
+
+            <div class="filterButtons">
+
+                <button onclick="filterQuestions('all')">
+                    Barchasi
+                </button>
+
+                <button onclick="filterQuestions('easy')">
+                    🟢 Oson
+                </button>
+
+                <button onclick="filterQuestions('medium')">
+                    🟡 O‘rta
+                </button>
+
+                <button onclick="filterQuestions('hard')">
+                    🔴 Qiyin
+                </button>
+
+            </div>
+
+            <div id="questionList">
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="toast"
+     id="toast">
+</div>
+
+
+<script>
+
+/* =====================================================
+   JUMANJI PRO ENGINE
+===================================================== */
+
+const TOTAL = 30;
+
+const PATH = [
+
+    [7,82],
+    [13,73],
+    [20,65],
+    [28,72],
+    [36,82],
+    [44,73],
+    [52,65],
+    [60,73],
+    [69,82],
+    [78,73],
+
+    [87,63],
+    [78,54],
+    [68,48],
+    [58,54],
+    [48,47],
+    [39,39],
+    [29,47],
+    [20,39],
+    [14,29],
+    [24,20],
+
+    [36,25],
+    [47,17],
+    [59,24],
+    [70,17],
+    [82,24],
+    [89,35],
+    [79,39],
+    [69,32],
+    [59,39],
+    [49,31]
+
+];
+
+
+/* =====================================================
+   EVENTS
+===================================================== */
+
+const EVENTS = {
+
+    4:{
+        type:"bonus",
+        icon:"🎁",
+        title:"OLTIN SANDIQ!",
+        text:"+1 qo‘shimcha katak!"
+    },
+
+    8:{
+        type:"penalty",
+        icon:"🐍",
+        title:"JUNGLE ILONI!",
+        text:"Ilon yo‘lingizni to‘sdi. −2 katak!"
+    },
+
+    12:{
+        type:"turbo",
+        icon:"⚡",
+        title:"TURBO!",
+        text:"+2 qo‘shimcha katak!"
+    },
+
+    16:{
+        type:"penalty",
+        icon:"💀",
+        title:"QADIMIY TUZOQ!",
+        text:"Tuzoq ishga tushdi. −2 katak!"
+    },
+
+    20:{
+        type:"bonus",
+        icon:"💎",
+        title:"QIMMATBAHO TOSH!",
+        text:"+1 qo‘shimcha katak!"
+    },
+
+    24:{
+        type:"teleport",
+        icon:"🌀",
+        title:"JUMANJI PORTALI!",
+        text:"Oldinga teleport!"
+    },
+
+    27:{
+        type:"penalty",
+        icon:"🌪️",
+        title:"JUNGLE BO‘RONI!",
+        text:"−3 katak!"
+    }
+
+};
+
+
+/* =====================================================
+   DEFAULT QUESTIONS
+===================================================== */
+
+let questions =
+JSON.parse(
+    localStorage.getItem("jumanjiQuestions")
+) || [
+
+    {
+        id:1,
+        level:"easy",
+        time:30,
+        text:"Epiteliy to‘qimasining asosiy vazifalaridan biri qaysi?",
+        answers:[
+            "Himoya qilish",
+            "Qon hosil qilish",
+            "Impuls o'tkazish",
+            "Suyak hosil qilish"
+        ],
+        correct:0,
+        image:""
+    },
+
+    {
+        id:2,
+        level:"medium",
+        time:30,
+        text:"Bir qavatli yassi epiteliy qaysi tuzilmada uchraydi?",
+        answers:[
+            "Epidermis",
+            "O‘pka alveolalari",
+            "Qizilo‘ngach",
+            "Teri"
+        ],
+        correct:1,
+        image:""
+    },
+
+    {
+        id:3,
+        level:"hard",
+        time:40,
+        text:"Biriktiruvchi to‘qimaning hujayralararo moddasida qaysi tolalar uchraydi?",
+        answers:[
+            "Faqat aktin va miozin",
+            "Kollagen, elastik va retikulyar",
+            "Faqat keratin",
+            "Faqat aktin"
+        ],
+        correct:1,
+        image:""
+    }
+
+];
+
+localStorage.setItem(
+    "jumanjiQuestions",
+    JSON.stringify(questions)
+);
+
+let usedQuestionIds = JSON.parse(localStorage.getItem("jumanjiUsedIds")) || [];
+
+
+/* =====================================================
+   GAME - STATE & SANITIZATION
+===================================================== */
+
+let rawGame = localStorage.getItem("jumanjiGamePro");
+let game;
+
+try {
+    game = JSON.parse(rawGame);
+} catch(e) {
+    game = null;
+}
+
+if (!game || !game.teams || !Array.isArray(game.teams) || game.teams.length < 2) {
+    game = {
+        current: 0,
+        started: false,
+        teams: [
+            { name: "JUNGLE", members: ["Ishtirokchi 1"], memberScores: {}, memberIndex: 0, pos: 0, moves: 0, correct: 0, wrong: 0 },
+            { name: "WARRIORS", members: ["Ishtirokchi 1"], memberScores: {}, memberIndex: 0, pos: 0, moves: 0, correct: 0, wrong: 0 }
+        ]
+    };
+} else {
+    for (let i = 0; i < 2; i++) {
+        if (!game.teams[i]) {
+            game.teams[i] = { name: i === 0 ? "JUNGLE" : "WARRIORS", members: ["Ishtirokchi 1"], memberScores: {}, memberIndex: 0, pos: 0, moves: 0, correct: 0, wrong: 0 };
+        }
+        if (!Array.isArray(game.teams[i].members) || game.teams[i].members.length === 0) {
+            game.teams[i].members = ["Ishtirokchi 1"];
+        }
+        game.teams[i].members = game.teams[i].members.filter(m => m && typeof m === 'string' && m.trim().length > 0);
+        if (game.teams[i].members.length === 0) {
+            game.teams[i].members = ["Ishtirokchi 1"];
+        }
+        if (!game.teams[i].memberScores || typeof game.teams[i].memberScores !== 'object') {
+            game.teams[i].memberScores = {};
+        }
+        // Initialize score for members if missing
+        game.teams[i].members.forEach(m => {
+            if (!game.teams[i].memberScores[m]) {
+                game.teams[i].memberScores[m] = { correct: 0, wrong: 0 };
+            }
+        });
+        if (typeof game.teams[i].memberIndex !== 'number' || game.teams[i].memberIndex >= game.teams[i].members.length) {
+            game.teams[i].memberIndex = 0;
+        }
+    }
+}
+
+let selectedQuestion=null;
+let timerInterval=null;
+let filter="all";
+
+
+/* =====================================================
+   SAVE
+===================================================== */
+
+function saveGame(){
+    localStorage.setItem(
+        "jumanjiGamePro",
+        JSON.stringify(game)
+    );
+}
+
+
+/* =====================================================
+   MAP CREATE
+===================================================== */
+
+function createMap(){
+
+    const path=
+        document.getElementById("path");
+
+    path.innerHTML="";
+
+    for(let i=0;i<PATH.length;i++){
+
+        if(i<PATH.length-1){
+
+            const x1=PATH[i][0];
+            const y1=PATH[i][1];
+
+            const x2=PATH[i+1][0];
+            const y2=PATH[i+1][1];
+
+            const dx=x2-x1;
+            const dy=y2-y1;
+
+            const distance=
+                Math.sqrt(dx*dx+dy*dy);
+
+            const angle=
+                Math.atan2(dy,dx)*180/Math.PI;
+
+            const line=
+                document.createElement("div");
+
+            line.className="pathLine";
+
+            line.style.left=x1+"%";
+            line.style.top=y1+"%";
+            line.style.width=distance+"%";
+            line.style.transform=
+                "rotate("+angle+"deg)";
+
+            path.appendChild(line);
+
+        }
+
+        const cell=
+            document.createElement("div");
+
+        cell.className="cell";
+
+        cell.style.left=
+            PATH[i][0]+"%";
+
+        cell.style.top=
+            PATH[i][1]+"%";
+
+        if(i===PATH.length-1){
+
+            cell.classList.add("finish");
+
+            cell.innerHTML="🏁";
+
+        }else{
+
+            cell.innerText=i+1;
+
+        }
+
+        if(EVENTS[i]){
+
+            if(EVENTS[i].type==="bonus" ||
+               EVENTS[i].type==="turbo"){
+
+                cell.classList.add("easyEvent");
+
+            }
+
+            if(EVENTS[i].type==="penalty")
+                cell.classList.add("penalty");
+
+            if(EVENTS[i].type==="teleport")
+                cell.classList.add("teleport");
+
+        }
+
+        path.appendChild(cell);
+
+    }
+
+    moveTokens();
+
+}
+
+
+/* =====================================================
+   MOVE TOKENS
+===================================================== */
+
+function moveTokens(){
+
+    for(let i=0;i<2;i++){
+
+        const token=
+            document.getElementById(
+                "token"+i
+            );
+
+        const pos=
+            Math.min(
+                game.teams[i].pos,
+                PATH.length-1
+            );
+
+        token.style.left=
+            PATH[pos][0]+"%";
+
+        token.style.top=
+            PATH[pos][1]+"%";
+
+        document.getElementById(
+            "label"+i
+        ).innerText=
+            game.teams[i].name;
+
+    }
+
+}
+
+
+/* =====================================================
+   UI
+===================================================== */
+
+function updateUI(){
+
+    for(let i=0;i<2;i++){
+
+        const t=game.teams[i];
+
+        document.getElementById(
+            "name"+i
+        ).innerText=t.name;
+
+        if (!Array.isArray(t.members) || t.members.length === 0) {
+            t.members = ["Ishtirokchi 1"];
+        }
+        if (typeof t.memberIndex !== 'number' || t.memberIndex >= t.members.length) {
+            t.memberIndex = 0;
+        }
+
+        const currentMemberName = t.members[t.memberIndex] || "Ishtirokchi 1";
+
+        document.getElementById(
+            "member"+i
+        ).innerText = currentMemberName;
+
+        document.getElementById(
+            "pos"+i
+        ).innerText=t.pos+1;
+
+        document.getElementById(
+            "moves"+i
+        ).innerText=t.moves;
+
+        document.getElementById(
+            "correct"+i
+        ).innerText=t.correct;
+
+        document.getElementById(
+            "wrong"+i
+        ).innerText=t.wrong;
+
+        document.getElementById(
+            "distance"+i
+        ).innerText=t.pos+1;
+
+        document.getElementById(
+            "state"+i
+        ).innerText=
+            game.current===i
+            ?"⚡ NAVBAT SIZDA!"
+            :"Kutmoqda...";
+
+        document.getElementById(
+            "team"+i
+        ).classList.toggle(
+            "active",
+            game.current===i
+        );
+
+    }
+
+    saveGame();
+    moveTokens();
+
+}
+
+
+/* =====================================================
+   START TURN
+===================================================== */
+
+function startTurn(){
+
+    if(game.teams[0].pos>=PATH.length-1 ||
+       game.teams[1].pos>=PATH.length-1){
+
+        showWinner();
+        return;
+
+    }
+
+    const team=
+        game.teams[game.current];
+
+    document.getElementById(
+        "turnAnimal"
+    ).innerText=
+        game.current===0
+        ?"🦁"
+        :"🐺";
+
+    document.getElementById(
+        "turnTitle"
+    ).innerText=
+        team.name;
+
+    if (!Array.isArray(team.members) || team.members.length === 0) {
+        team.members = ["Ishtirokchi 1"];
+    }
+    if (typeof team.memberIndex !== 'number' || team.memberIndex >= team.members.length) {
+        team.memberIndex = 0;
+    }
+
+    const currentMember = team.members[team.memberIndex] || "Ishtirokchi 1";
+    document.getElementById(
+        "turnMemberText"
+    ).innerText = "Ishtirokchi: " + currentMember;
+
+    document.getElementById(
+        "turnOverlay"
+    ).classList.add("show");
+
+}
+
+
+/* =====================================================
+   CLOSE TURN → DICE
+===================================================== */
+
+function closeTurnAndDice(){
+
+    document
+        .getElementById("turnOverlay")
+        .classList.remove("show");
+
+    rollDice();
+
+}
+
+
+/* =====================================================
+   DICE
+===================================================== */
+
+function rollDice(){
+
+    const overlay=
+        document.getElementById(
+            "diceOverlay"
+        );
+
+    const dice=
+        document.getElementById("dice");
+
+    overlay.classList.add("show");
+
+    dice.classList.add("rolling");
+
+    let count=0;
+
+    const interval=
+        setInterval(()=>{
+
+            const n=
+                Math.floor(
+                    Math.random()*6
+                )+1;
+
+            dice.innerText=
+                ["⚀","⚁","⚂","⚃","⚄","⚅"][n-1];
+
+            count++;
+
+            if(count>15){
+
+                clearInterval(interval);
+
+                dice.classList.remove(
+                    "rolling"
+                );
+
+                const final=
+                    Math.floor(
+                        Math.random()*6
+                    )+1;
+
+                dice.innerText=
+                    ["⚀","⚁","⚂","⚃","⚄","⚅"]
+                    [final-1];
+
+                document.getElementById(
+                    "diceResult"
+                ).innerText=
+                    "Zar: "+final;
+
+                setTimeout(()=>{
+
+                    overlay.classList.remove(
+                        "show"
+                    );
+
+                    openDifficultySelect();
+
+                },900);
+
+            }
+
+        },100);
+
+    soundDice();
+
+}
+
+
+/* =====================================================
+   DIFFICULTY SELECT MODAL
+===================================================== */
+
+function openDifficultySelect(){
+    document.getElementById("difficultyOverlay").classList.add("show");
+}
+
+function selectDifficulty(level){
+    document.getElementById("difficultyOverlay").classList.remove("show");
+    openRandomQuestionByLevel(level);
+}
+
+
+/* =====================================================
+   QUESTION RANDOM BY LEVEL
+===================================================== */
+
+function openRandomQuestionByLevel(level){
+
+    let availablePool = questions.filter(
+        q => q.level === level && !usedQuestionIds.includes(q.id)
+    );
+
+    if(availablePool.length === 0){
+        let allOfLevel = questions.filter(q => q.level === level);
+        if(allOfLevel.length > 0){
+            usedQuestionIds = usedQuestionIds.filter(id => !allOfLevel.some(q => q.id === id));
+            localStorage.setItem("jumanjiUsedIds", JSON.stringify(usedQuestionIds));
+            availablePool = allOfLevel;
+        }
+    }
+
+    if(!availablePool.length){
+        availablePool = questions.filter(q => !usedQuestionIds.includes(q.id));
+        if(!availablePool.length){
+            usedQuestionIds = [];
+            localStorage.setItem("jumanjiUsedIds", JSON.stringify(usedQuestionIds));
+            availablePool = questions;
+        }
+    }
+
+    if(!availablePool.length){
+        toast("Savollar mavjud emas!");
+        return;
+    }
+
+    selectedQuestion = availablePool[
+        Math.floor(Math.random() * availablePool.length)
+    ];
+
+    usedQuestionIds.push(selectedQuestion.id);
+    localStorage.setItem("jumanjiUsedIds", JSON.stringify(usedQuestionIds));
+
+    showQuestion();
+
+}
+
+
+/* =====================================================
+   SHOW QUESTION
+===================================================== */
+
+function showQuestion(){
+
+    const q=selectedQuestion;
+
+    const badge=
+        document.getElementById(
+            "levelBadge"
+        );
+
+    badge.className=
+        "levelBadge "+
+        q.level;
+
+    badge.innerText=
+        q.level==="easy"
+        ?"🟢 OSON — +1 KATAK"
+        :q.level==="medium"
+        ?"🟡 O‘RTA — +2 KATAK"
+        :"🔴 QIYIN — +3 KATAK";
+
+    document.getElementById(
+        "questionText"
+    ).innerText=q.text;
+
+    const team = game.teams[game.current];
+    const memberName = (team.members && team.members[team.memberIndex]) ? team.members[team.memberIndex] : "";
+    document.getElementById(
+        "questionTeam"
+    ).innerText=
+        team.name + (memberName ? " (" + memberName + ")" : "");
+
+    const img=
+        document.getElementById(
+            "questionImage"
+        );
+
+    if(q.image){
+
+        img.src=q.image;
+        img.style.display="block";
+
+    }else{
+
+        img.src="";
+        img.style.display="none";
+
+    }
+
+    const answers=
+        document.getElementById(
+            "answers"
+        );
+
+    answers.innerHTML="";
+
+    q.answers.forEach(
+        (answer,index)=>{
+
+            const button=
+                document.createElement(
+                    "button"
+                );
+
+            button.className="answer";
+
+            button.innerHTML=
+                "<b>"+
+                String.fromCharCode(65+index)+
+                ".</b> "+
+                escapeHTML(answer);
+
+            button.onclick=()=>{
+                checkAnswer(index,button);
+            };
+
+            answers.appendChild(button);
+
+        }
+    );
+
+    document
+        .getElementById("questionOverlay")
+        .classList.add("show");
+
+    startTimer(
+        q.time || 30
+    );
+
+}
+
+
+/* =====================================================
+   TIMER
+===================================================== */
+
+function startTimer(seconds){
+
+    clearInterval(timerInterval);
+
+    let remaining=seconds;
+
+    const el=
+        document.getElementById(
+            "timer"
+        );
+
+    el.innerText=remaining;
+
+    timerInterval=
+        setInterval(()=>{
+
+            remaining--;
+
+            el.innerText=
+                remaining;
+
+            if(remaining<=5)
+                el.style.color="#ff6258";
+            else
+                el.style.color=
+                    "var(--gold2)";
+
+            if(remaining<=0){
+
+                clearInterval(
+                    timerInterval
+                );
+
+                timeOut();
+
+            }
+
+        },1000);
+
+}
+
+
+/* =====================================================
+   TIME OUT
+===================================================== */
+
+function timeOut(){
+
+    const buttons=
+        document.querySelectorAll(
+            ".answer"
+        );
+
+    buttons.forEach(
+        b=>b.disabled=true
+    );
+
+    const team=
+        game.teams[
+            game.current
+        ];
+
+    team.wrong++;
+    team.moves++;
+
+    const activeMember = team.members[team.memberIndex];
+    if(activeMember){
+        if(!team.memberScores[activeMember]){
+            team.memberScores[activeMember] = {correct: 0, wrong: 0};
+        }
+        team.memberScores[activeMember].wrong++;
+    }
+
+    moveTeam(-1);
+
+    toast("⏰ VAQT TUGADI! −1 KATAK");
+
+    setTimeout(
+        finishQuestion,
+        1300
+    );
+
+}
+
+
+/* =====================================================
+   CHECK ANSWER
+===================================================== */
+
+function checkAnswer(
+    index,
+    button
+){
+
+    clearInterval(timerInterval);
+
+    const buttons=
+        document.querySelectorAll(
+            ".answer"
+        );
+
+    buttons.forEach(
+        b=>b.disabled=true
+    );
+
+    const team=
+        game.teams[
+            game.current
+        ];
+
+    const activeMember = team.members[team.memberIndex];
+    if(activeMember){
+        if(!team.memberScores[activeMember]){
+            team.memberScores[activeMember] = {correct: 0, wrong: 0};
+        }
+    }
+
+    const correct=
+        index===selectedQuestion.correct;
+
+    if(correct){
+
+        button.classList.add(
+            "correct"
+        );
+
+        team.correct++;
+        team.moves++;
+        if(activeMember) team.memberScores[activeMember].correct++;
+
+        let steps=1;
+
+        if(selectedQuestion.level==="medium")
+            steps=2;
+
+        if(selectedQuestion.level==="hard")
+            steps=3;
+
+        toast(
+            "✅ TO‘G‘RI! +"+
+            steps+
+            " KATAK"
+        );
+
+        moveTeam(steps);
+
+        soundCorrect();
+
+    }else{
+
+        button.classList.add(
+            "wrong"
+        );
+
+        buttons[
+            selectedQuestion.correct
+        ].classList.add(
+            "correct"
+        );
+
+        team.wrong++;
+        team.moves++;
+        if(activeMember) team.memberScores[activeMember].wrong++;
+
+        toast(
+            "❌ XATO! −1 KATAK"
+        );
+
+        moveTeam(-1);
+
+        soundWrong();
+
+    }
+
+    setTimeout(
+        finishQuestion,
+        1300
+    );
+
+}
+
+
+/* =====================================================
+   MOVE TEAM
+===================================================== */
+
+function moveTeam(steps){
+
+    const team=
+        game.teams[
+            game.current
+        ];
+
+    let target=
+        team.pos+steps;
+
+    target=
+        Math.max(
+            0,
+            Math.min(
+                PATH.length-1,
+                target
+            )
+        );
+
+    animateToken(
+        game.current,
+        team.pos,
+        target
+    );
+
+    team.pos=target;
+
+    updateUI();
+
+}
+
+
+/* =====================================================
+   TOKEN ANIMATION
+===================================================== */
+
+function animateToken(
+    teamIndex,
+    from,
+    to
+){
+
+    const token=
+        document.getElementById(
+            "token"+teamIndex
+        );
+
+    token.classList.add(
+        "moving"
+    );
+
+    const direction=
+        to>=from ? 1 : -1;
+
+    let p=from;
+
+    const interval=
+        setInterval(()=>{
+
+            if(p===to){
+
+                clearInterval(interval);
+
+                token.classList.remove(
+                    "moving"
+                );
+
+                return;
+
+            }
+
+            p+=direction;
+
+            token.style.left=
+                PATH[p][0]+"%";
+
+            token.style.top=
+                PATH[p][1]+"%";
+
+            soundStep();
+
+        },430);
+
+}
+
+
+/* =====================================================
+   FINISH QUESTION
+===================================================== */
+
+function finishQuestion(){
+
+    document
+        .getElementById("questionOverlay")
+        .classList.remove("show");
+
+    const team = game.teams[game.current];
+
+    if(team.pos >= PATH.length - 1){
+        showWinner();
+        return;
+    }
+
+    const event=
+        EVENTS[
+            team.pos
+        ];
+
+    if(event){
+
+        setTimeout(
+            ()=>{
+                showEvent(event);
+            },
+            500
+        );
+
+    }else{
+
+        nextTurn();
+
+    }
+
+}
+
+
+/* =====================================================
+   EVENTS
+===================================================== */
+
+function showEvent(event){
+
+    document.getElementById(
+        "eventIcon"
+    ).innerText=event.icon;
+
+    document.getElementById(
+        "eventTitle"
+    ).innerText=event.title;
+
+    document.getElementById(
+        "eventText"
+    ).innerText=event.text;
+
+    document
+        .getElementById("eventOverlay")
+        .classList.add("show");
+
+}
+
+
+/* =====================================================
+   CLOSE EVENT
+===================================================== */
+
+function closeEvent(){
+
+    const team=
+        game.teams[
+            game.current
+        ];
+
+    const event=
+        EVENTS[
+            team.pos
+        ];
+
+    if(event){
+
+        if(event.type==="bonus")
+            team.pos+=1;
+
+        if(event.type==="turbo")
+            team.pos+=2;
+
+        if(event.type==="penalty")
+            team.pos-=2;
+
+        if(event.type==="teleport"){
+
+            team.pos+=4;
+
+        }
+
+        team.pos=
+            Math.max(
+                0,
+                Math.min(
+                    PATH.length-1,
+                    team.pos
+                )
+            );
+
+    }
+
+    document
+        .getElementById("eventOverlay")
+        .classList.remove("show");
+
+    updateUI();
+
+    if(team.pos>=PATH.length-1){
+
+        showWinner();
+
+        return;
+
+    }
+
+    nextTurn();
+
+}
+
+
+/* =====================================================
+   NEXT TURN
+===================================================== */
+
+function nextTurn(){
+
+    const team = game.teams[game.current];
+    if(Array.isArray(team.members) && team.members.length > 0){
+        team.memberIndex = (team.memberIndex + 1) % team.members.length;
+    }
+
+    game.current=
+        game.current===0
+        ?1
+        :0;
+
+    updateUI();
+
+}
+
+
+/* =====================================================
+   APPLY TEAM PENALTY
+===================================================== */
+
+function applyTeamPenalty(teamIndex){
+    if(confirm(game.teams[teamIndex].name + " jamoasiga jarima berilib, 1 katak orqaga surilsinmi?")){
+        game.current = teamIndex;
+        moveTeam(-1);
+        toast("⚠️ " + game.teams[teamIndex].name + " jamoasiga jarima berildi (−1 katak)!");
+        
+        if(game.teams[teamIndex].pos >= PATH.length - 1){
+            showWinner();
+        } else {
+            nextTurn();
+        }
+    }
+}
+
+
+/* =====================================================
+   QUESTION CLOSE
+===================================================== */
+
+function closeQuestion(){
+
+    clearInterval(timerInterval);
+
+    document
+        .getElementById("questionOverlay")
+        .classList.remove("show");
+
+}
+
+
+/* =====================================================
+   WINNER WITH MUSCLE LORE & RANKING
+===================================================== */
+
+function showWinner(){
+
+    const team = game.teams[game.current];
+
+    document.getElementById(
+        "winner"
+    ).innerText = "🏆 " + team.name + " G‘OLIB!";
+
+    document.getElementById(
+        "winSubtitle"
+    ).innerText = "Gistologiya Jumanji jangida mukammal g‘alaba qozonildi!";
+
+    // Jamoa a'zolari bo'yicha reytingni yasash
+    let rankingHTML = `
+        <div class="rankingBox">
+            <h3>👥 Jamoa a'zolari reytingi</h3>
+    `;
+
+    // Saralash: ko'p to'g'ri topganlar yuqoriga
+    let membersArr = team.members.map(m => {
+        let sc = (team.memberScores && team.memberScores[m]) ? team.memberScores[m] : {correct: 0, wrong: 0};
+        return { name: m, correct: sc.correct, wrong: sc.wrong };
+    });
+
+    membersArr.sort((a, b) => b.correct - a.correct || a.wrong - b.wrong);
+
+    membersArr.forEach((member, idx) => {
+        let medal = idx === 0 ? "🥇" : idx === 1 ? "🥈" : idx === 2 ? "🥉" : "👤";
+        rankingHTML += `
+            <div class="rankItem">
+                <span>${medal} ${escapeHTML(member.name)}</span>
+                <strong>✅ ${member.correct} ta to‘g‘ri | ❌ ${member.wrong} ta xato</strong>
+            </div>
+        `;
+    });
+
+    rankingHTML += `</div>`;
+    document.getElementById("rankingContainer").innerHTML = rankingHTML;
+
+    // Mushaklar bo'yicha g'alaba izohi (Miologiya / Gistologiya)
+    document.getElementById("muscleLoreContainer").innerHTML = `
+        <div class="muscleLore">
+            💪 <b>Miologik G‘alaba Tahlili:</b> Bu g‘alaba xuddi sklet mushak to‘qimalarining (striated skeletal muscle tissue) sinxron va qudratli qisqarishidek yorqin bo‘ldi! Sarkomerlarning mukammal qisqarishi va ATF quvvati qanday harakatni ta'minlasa, ushbu jamoaning bilim sinergiyasi ham shunchalik yuksak natijani ta'minladi!
+        </div>
+    `;
+
+    document
+        .getElementById("winOverlay")
+        .classList.add("show");
+
+    soundWin();
+
+}
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+function resetGame(){
+
+    if(
+        !confirm(
+            "O‘yinni boshidan boshlaysizmi?"
+        )
+    )
+        return;
+
+    usedQuestionIds = [];
+    localStorage.removeItem("jumanjiUsedIds");
+
+    game={
+
+        current:0,
+
+        started:false,
+
+        teams:[
+
+            {
+                name:
+                    game.teams[0].name ||
+                    "JUNGLE",
+                members: (game.teams[0].members && game.teams[0].members.length) ? game.teams[0].members : ["Ishtirokchi 1"],
+                memberScores: {},
+                memberIndex:0,
+                pos:0,
+                moves:0,
+                correct:0,
+                wrong:0
+            },
+
+            {
+                name:
+                    game.teams[1].name ||
+                    "WARRIORS",
+                members: (game.teams[1].members && game.teams[1].members.length) ? game.teams[1].members : ["Ishtirokchi 1"],
+                memberScores: {},
+                memberIndex:0,
+                pos:0,
+                moves:0,
+                correct:0,
+                wrong:0
+            }
+
+        ]
+
+    };
+
+    // Reset scores
+    game.teams.forEach(t => {
+        t.members.forEach(m => {
+            t.memberScores[m] = {correct: 0, wrong: 0};
+        });
+    });
+
+    document
+        .getElementById("winOverlay")
+        .classList.remove("show");
+
+    updateUI();
+
+    toast(
+        "🔄 O‘yin qayta boshlandi!"
+    );
+
+}
+
+
+/* =====================================================
+   ADMIN LOGIN
+===================================================== */
+
+function openAdmin(){
+
+    document
+        .getElementById("loginOverlay")
+        .classList.add("show");
+
+    document.getElementById(
+        "adminPin"
+    ).value="";
+
+    setTimeout(
+        ()=>{
+            document
+                .getElementById(
+                    "adminPin"
+                )
+                .focus();
+        },
+        100
+    );
+
+}
+
+function checkAdmin(){
+
+    const pin=
+        document.getElementById(
+            "adminPin"
+        ).value;
+
+    if(pin==="2026"){
+
+        document
+            .getElementById("loginOverlay")
+            .classList.remove("show");
+
+        document
+            .getElementById("adminOverlay")
+            .classList.add("show");
+
+        document.getElementById(
+            "teamNameInput0"
+        ).value=
+            game.teams[0].name;
+
+        document.getElementById(
+            "teamMembersInput0"
+        ).value =
+            (game.teams[0].members && Array.isArray(game.teams[0].members)) ? game.teams[0].members.join(", ") : "";
+
+        document.getElementById(
+            "teamNameInput1"
+        ).value=
+            game.teams[1].name;
+
+        document.getElementById(
+            "teamMembersInput1"
+        ).value =
+            (game.teams[1].members && Array.isArray(game.teams[1].members)) ? game.teams[1].members.join(", ") : "";
+
+        renderQuestions();
+
+    }else{
+
+        toast(
+            "❌ PIN noto‘g‘ri!"
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   ADMIN CLOSE
+===================================================== */
+
+function closeAdmin(){
+
+    document
+        .getElementById("adminOverlay")
+        .classList.remove("show");
+
+}
+
+
+/* =====================================================
+   SAVE TEAMS
+===================================================== */
+
+function saveTeams(){
+
+    game.teams[0].name=
+        document.getElementById(
+            "teamNameInput0"
+        ).value.trim()
+        ||"JUNGLE";
+
+    const membersText0 = document.getElementById("teamMembersInput0").value.trim();
+    let parsed0 = membersText0 ? membersText0.split(",").map(s => s.trim()).filter(Boolean) : [];
+    game.teams[0].members = parsed0.length ? parsed0 : ["Ishtirokchi 1"];
+    game.teams[0].memberIndex = 0;
+    game.teams[0].memberScores = {};
+    game.teams[0].members.forEach(m => {
+        game.teams[0].memberScores[m] = {correct: 0, wrong: 0};
+    });
+
+    game.teams[1].name=
+        document.getElementById(
+            "teamNameInput1"
+        ).value.trim()
+        ||"WARRIORS";
+
+    const membersText1 = document.getElementById("teamMembersInput1").value.trim();
+    let parsed1 = membersText1 ? membersText1.split(",").map(s => s.trim()).filter(Boolean) : [];
+    game.teams[1].members = parsed1.length ? parsed1 : ["Ishtirokchi 1"];
+    game.teams[1].memberIndex = 0;
+    game.teams[1].memberScores = {};
+    game.teams[1].members.forEach(m => {
+        game.teams[1].memberScores[m] = {correct: 0, wrong: 0};
+    });
+
+    updateUI();
+
+    toast(
+        "✅ Jamoalar va a'zolar saqlandi!"
+    );
+
+}
+
+
+/* =====================================================
+   ADD QUESTION
+===================================================== */
+
+function addQuestion(){
+
+    const text=
+        document.getElementById(
+            "qText"
+        ).value.trim();
+
+    const answers=[
+        document.getElementById("ans0").value.trim(),
+        document.getElementById("ans1").value.trim(),
+        document.getElementById("ans2").value.trim(),
+        document.getElementById("ans3").value.trim()
+    ];
+
+    const level=
+        document.getElementById(
+            "qLevel"
+        ).value;
+
+    const correct=
+        Number(
+            document.getElementById(
+                "qCorrect"
+            ).value
+        );
+
+    const time=
+        Number(
+            document.getElementById(
+                "qTime"
+            ).value
+        )||30;
+
+    const file=
+        document.getElementById(
+            "qImage"
+        ).files[0];
+
+    if(
+        !text ||
+        answers.some(
+            a=>!a
+        )
+    ){
+
+        toast(
+            "⚠ Savol va barcha javoblarni kiriting!"
+        );
+
+        return;
+
+    }
+
+    if(file){
+
+        const reader=
+            new FileReader();
+
+        reader.onload=function(){
+
+            createQuestion(
+                text,
+                answers,
+                level,
+                correct,
+                time,
+                reader.result
+            );
+
+        };
+
+        reader.readAsDataURL(file);
+
+    }else{
+
+        createQuestion(
+            text,
+            answers,
+            level,
+            correct,
+            time,
+            ""
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   CREATE QUESTION
+===================================================== */
+
+function createQuestion(
+    text,
+    answers,
+    level,
+    correct,
+    time,
+    image
+){
+
+    questions.push({
+
+        id:
+            Date.now()+
+            Math.random(),
+
+        text,
+
+        answers,
+
+        level,
+
+        correct,
+
+        time,
+
+        image
+
+    });
+
+    localStorage.setItem(
+        "jumanjiQuestions",
+        JSON.stringify(questions)
+    );
+
+    clearQuestionForm();
+
+    renderQuestions();
+
+    toast(
+        "✅ Savol bankka qo‘shildi!"
+    );
+
+}
+
+
+/* =====================================================
+   CLEAR FORM
+===================================================== */
+
+function clearQuestionForm(){
+
+    document.getElementById(
+        "qText"
+    ).value="";
+
+    for(let i=0;i<4;i++){
+
+        document.getElementById(
+            "ans"+i
+        ).value="";
+
+    }
+
+    document.getElementById(
+        "qImage"
+    ).value="";
+
+}
+
+
+/* =====================================================
+   RENDER QUESTIONS
+===================================================== */
+
+function renderQuestions(){
+
+    const list=
+        document.getElementById(
+            "questionList"
+        );
+
+    list.innerHTML="";
+
+    let arr=
+        filter==="all"
+        ?questions
+        :questions.filter(
+            q=>q.level===filter
+        );
+
+    document.getElementById(
+        "questionCount"
+    ).innerText=
+        questions.length+
+        " ta";
+
+    arr.forEach(
+        (q,index)=>{
+
+            const div=
+                document.createElement(
+                    "div"
+                );
+
+            div.className="qItem";
+
+            const badge=
+                q.level==="easy"
+                ?"🟢 OSON"
+                :q.level==="medium"
+                ?"🟡 O‘RTA"
+                :"🔴 QIYIN";
+
+            div.innerHTML=`
+
+                <div class="qTop">
+
+                    <strong>
+                        ${badge}
+                    </strong>
+
+                    <span>
+                        ⏱ ${q.time}s
+                    </span>
+
+                </div>
+
+                <div class="qText">
+                    ${escapeHTML(q.text)}
+                </div>
+
+                <div class="qActions">
+
+                    <button
+                        onclick="editQuestion('${q.id}')">
+                        ✏ Tahrirlash
+                    </button>
+
+                    <button
+                        onclick="deleteQuestion('${q.id}')">
+                        🗑 O‘chirish
+                    </button>
+
+                </div>
+
+            `;
+
+            list.appendChild(div);
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   FILTER
+===================================================== */
+
+function filterQuestions(
+    type
+){
+
+    filter=type;
+
+    renderQuestions();
+
+}
+
+
+/* =====================================================
+   DELETE
+===================================================== */
+
+function deleteQuestion(id){
+
+    if(
+        !confirm(
+            "Savolni o‘chirmoqchimisiz?"
+        )
+    )
+        return;
+
+    questions=
+        questions.filter(
+            q=>String(q.id)!==String(id)
+        );
+
+    localStorage.setItem(
+        "jumanjiQuestions",
+        JSON.stringify(questions)
+    );
+
+    renderQuestions();
+
+}
+
+
+/* =====================================================
+   EDIT
+===================================================== */
+
+function editQuestion(id){
+
+    const q=
+        questions.find(
+            x=>String(x.id)===String(id)
+        );
+
+    if(!q)
+        return;
+
+    document.getElementById(
+        "qText"
+    ).value=q.text;
+
+    document.getElementById(
+        "qLevel"
+    ).value=q.level;
+
+    document.getElementById(
+        "qCorrect"
+    ).value=q.correct;
+
+    document.getElementById(
+        "qTime"
+    ).value=q.time;
+
+    q.answers.forEach(
+        (a,i)=>{
+            document.getElementById(
+                "ans"+i
+            ).value=a;
+        }
+    );
+
+    questions=
+        questions.filter(
+            x=>String(x.id)!==String(id)
+        );
+
+    localStorage.setItem(
+        "jumanjiQuestions",
+        JSON.stringify(questions)
+    );
+
+    renderQuestions();
+
+    toast(
+        "✏ Savol tahrirlash maydoniga yuklandi"
+    );
+
+}
+
+
+/* =====================================================
+   EXPORT
+===================================================== */
+
+function exportQuestions(){
+
+    const blob=
+        new Blob(
+            [
+                JSON.stringify(
+                    questions,
+                    null,
+                    2
+                )
+            ],
+            {
+                type:"application/json"
+            }
+        );
+
+    const url=
+        URL.createObjectURL(blob);
+
+    const a=
+        document.createElement("a");
+
+    a.href=url;
+
+    a.download=
+        "gistologiya-jumanji-savollar.json";
+
+    a.click();
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+/* =====================================================
+   IMPORT
+===================================================== */
+
+function importQuestions(event){
+
+    const file=
+        event.target.files[0];
+
+    if(!file)
+        return;
+
+    const reader=
+        new FileReader();
+
+    reader.onload=function(){
+
+        try{
+
+            const data=
+                JSON.parse(
+                    reader.result
+                );
+
+            if(!Array.isArray(data))
+                throw new Error();
+
+            questions=data;
+
+            localStorage.setItem(
+                "jumanjiQuestions",
+                JSON.stringify(questions)
+            );
+
+            renderQuestions();
+
+            toast(
+                "📥 Savollar import qilindi!"
+            );
+
+        }catch(e){
+
+            toast(
+                "❌ JSON fayl xato!"
+            );
+
+        }
+
+    };
+
+    reader.readAsText(file);
+
+}
+
+
+/* =====================================================
+   FULLSCREEN
+===================================================== */
+
+function fullscreen(){
+
+    if(!document.fullscreenElement){
+
+        document
+            .documentElement
+            .requestFullscreen();
+
+    }else{
+
+        document.exitFullscreen();
+
+    }
+
+}
+
+
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
+
+function escapeHTML(text){
+
+    const d=
+        document.createElement("div");
+
+    d.textContent=text;
+
+    return d.innerHTML;
+
+}
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+let toastTimer;
+
+function toast(text){
+
+    const el=
+        document.getElementById(
+            "toast"
+        );
+
+    el.innerText=text;
+
+    el.classList.add("show");
+
+    clearTimeout(
+        toastTimer
+    );
+
+    toastTimer=
+        setTimeout(
+            ()=>{
+                el.classList.remove(
+                    "show"
+                );
+            },
+            2200
+        );
+
+}
+
+
+/* =====================================================
+   SOUND ENGINE
+===================================================== */
+
+let audioCtx=null;
+
+function audio(){
+
+    if(!audioCtx){
+
+        audioCtx=
+            new (
+                window.AudioContext ||
+                window.webkitAudioContext
+            )();
+
+    }
+
+    return audioCtx;
+
+}
+
+function beep(
+    frequency,
+    duration,
+    type="sine"
+){
+
+    try{
+
+        const ctx=audio();
+
+        const osc=
+            ctx.createOscillator();
+
+        const gain=
+            ctx.createGain();
+
+        osc.type=type;
+
+        osc.frequency.value=
+            frequency;
+
+        gain.gain.value=.06;
+
+        osc.connect(gain);
+
+        gain.connect(
+            ctx.destination
+        );
+
+        osc.start();
+
+        gain.gain.exponentialRampToValueAtTime(
+            .001,
+            ctx.currentTime+
+            duration
+        );
+
+        osc.stop(
+            ctx.currentTime+
+            duration
+        );
+
+    }catch(e){}
+
+}
+
+function soundStep(){
+
+    beep(
+        180,
+        .08,
+        "square"
+    );
+
+}
+
+function soundCorrect(){
+
+    beep(600,.12);
+
+    setTimeout(
+        ()=>beep(900,.18),
+        100
+    );
+
+}
+
+function soundWrong(){
+
+    beep(
+        180,
+        .25,
+        "sawtooth"
+    );
+
+}
+
+function soundDice(){
+
+    for(
+        let i=0;
+        i<12;
+        i++
+    ){
+
+        setTimeout(
+            ()=>{
+                beep(
+                    160+
+                    Math.random()*160,
+                    .05,
+                    "square"
+                );
+            },
+            i*90
+        );
+
+    }
+
+}
+
+function soundWin(){
+
+    [523,659,784,1046]
+    .forEach(
+        (f,i)=>{
+
+            setTimeout(
+                ()=>{
+                    beep(
+                        f,
+                        .35
+                    );
+                },
+                i*180
+            );
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+createMap();
+updateUI();
+
+</script>
+
+</body>
+</html>
